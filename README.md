@@ -25,7 +25,7 @@ This repository provides a tool to activate Adobe Acrobat Pro with ease. The act
 2. Run the following command in PowerShell to download and execute the activation script:
 
    ```powershell
-   irm https://github.com/oop7/Adobe.Acrobat.Pro-Activator/releases/download/v1/v1.zip -OutFile v1.zip; Expand-Archive v1.zip -DestinationPath . -Force; cmd.exe /c .\v1\script.bat
+   irm https://github.com/oop7/Adobe.Acrobat.Pro-Activator/releases/download/v1.0/v1.zip -OutFile v1.zip; Expand-Archive v1.zip -DestinationPath . -Force; cmd.exe /c .\v1\script.bat
    ```
 
 ## 💻 **Usage**
