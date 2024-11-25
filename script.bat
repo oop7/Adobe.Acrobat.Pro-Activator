@@ -1,6 +1,16 @@
 @echo off
 setlocal
 
+:: Self-elevation code
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%errorlevel%' NEQ '0' (
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+)
+
 :: Set script directories
 set "SCRIPT_DIR=%~dp0"
 set "SRC_DIR=%SCRIPT_DIR%src\"
@@ -73,8 +83,10 @@ echo %YELLOW%%DEFAULT_DEST_DIR%%RESET%
 echo %RED%If the software is not installed in this directory, please ensure the path is correct before continuing.%RESET%
 
 :: Prompt for user input
-echo %GREEN%1. Activate%RESET%
-echo %RED%2. Exit%RESET%
+echo.
+echo %GREEN%============[1] Activate%RESET%
+echo.
+echo %RED%===[2] Exit%RESET%
 set /p choice=Choose an option (1 or 2): 
 
 :: Handle user choice
