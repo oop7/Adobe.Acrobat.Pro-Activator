@@ -55,7 +55,7 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 
 ## ℹ️ **Acknowledgments**
 
-- Special thanks to JUNLAJUBALAM & RoLlIaPrO, which was instrumental in this script's functionality.
+- Special thanks to `JUNLAJUBALAM & RoLlIaPrO`, which was instrumental in this script's functionality.
 
 ## ❓ **Contact**
 
